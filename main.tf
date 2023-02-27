@@ -11,7 +11,16 @@ provider "azurerm" {
   features {}
 }
 
+locals {
+  tags = {
+    reason      = "TF102"
+    owner       = "agsantos@plainconcepts.com"
+    description = "This is a short description"
+  }
+}
+
 resource "azurerm_resource_group" "rg" {
   name     = "TF102ResourceGroup"
   location = "West Europe"
+  tags     = local.tags
 }
