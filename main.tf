@@ -20,7 +20,7 @@ locals {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "TF102ResourceGroup"
-  location = "West Europe"
+  name     = var.rg_name
+  location = var.location
   tags     = local.tags
 }
